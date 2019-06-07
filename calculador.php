@@ -12,9 +12,6 @@ class Calculador {
         $previous_was_strike = false;
 
         foreach ( $partidas as $partida ) {
-            echo 'score1 : ' . $partida->get_score_1() . ' --- ';
-            echo 'score2 : ' . $partida->get_score_2() . '<br/>';
-
             $total += $partida->get_score_1();
             $total += $partida->get_score_2();
 
@@ -27,19 +24,11 @@ class Calculador {
             }
 
             // setting flags
-            if ($partida->check_if_spare()) {
-                $previous_was_spare = true;
-            }else{
-                $previous_was_spare = false;
-            }
-            if ($partida->check_if_strike()) {
-                $previous_was_strike = true;
-            }else{
-                $previous_was_strike = false;
-            }
+            $previous_was_spare = ( $partida->check_if_spare() ) ? true : false;
+            $previous_was_strike = ( $partida->check_if_strike() )? true : false;
             
         }
-        echo $total;
+        echo 'El total es: ' . $total;
         return $total;
     }
 }

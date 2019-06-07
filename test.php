@@ -1,7 +1,7 @@
 <?php 
 include 'calculador.php';
 include 'partida.php';
-
+include 'utils.php';
 
 // Game instances
 $juego_1 = [ new Partida(3, 5), new Partida(2, 4), new Partida(3, 4) ];
