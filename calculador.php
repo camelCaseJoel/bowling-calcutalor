@@ -7,9 +7,11 @@ class Calculador {
         $previous_was_strike = false;
 
         foreach ( $partidas as $partida ) {
+            // adding normal points
             $total += $partida->get_score_1();
             $total += $partida->get_score_2();
 
+            // adding extra points
             if ($previous_was_strike ) {
                 $total += $partida->get_score_1();
                 $total += $partida->get_score_2();
@@ -23,7 +25,9 @@ class Calculador {
             $previous_was_strike = ( $partida->check_if_strike() )? true : false;
             
         }
+
         echo 'El total es: ' . $total;
+        
         return $total;
     }
 }
