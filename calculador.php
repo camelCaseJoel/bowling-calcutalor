@@ -1,11 +1,6 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 class Calculador {
-    private $extra_points;
-
     public function calcular_total ( $partidas ) {
         $total = 0;
         $previous_was_spare = false;
