@@ -2,10 +2,6 @@
 include 'calculador.php';
 include 'partida.php';
 
-// Testing function
-function checkea( $debe_ser, $computado ){
-    echo $debe_ser === $computado ? 'correcto!'  : 'incorrecto!';
-}
 
 // Game instances
 $juego_1 = [ new Partida(3, 5), new Partida(2, 4), new Partida(3, 4) ];
